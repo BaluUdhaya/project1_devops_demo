@@ -32,6 +32,18 @@ jobs:
               password: 'Nuvelabs123$'
               port: 22
               script: curl -l -u admin:Root123$ http://localhost:8080/job/project1/build?token=balu
+        - name: integrate with tomcat and deploy
+          uses: appleboy/ssh-action@v1
+          with:
+              host: 13.204.154.55
+              username: 'labuser'
+              password: 'Nuvelabs123$'
+              port: 22
+              script: |
+                 cd /var/lib/jenkins/workspace/project1/target/
+                 ls -l
+                 scp /var/lib/jenkins/workspace/project1/target/*.war /var/lib/tomcat9/webapps
+                 systemctl restart tomcat9
 
             
 
