@@ -20,5 +20,9 @@ jobs:
             cache: 'maven'
         - name: package code
           run: mvn package
+        - name: test code
+          run: |
+            echo "code tested"
+            mvn test
             
 
