@@ -11,5 +11,14 @@ jobs:
         - name: checkout code
           uses: actions/checkout@v5
           with:
-            repository: BaluUdhaya/git_devops
+            repository: BaluUdhaya/DevOpsCodeDemo
+        - name: set up java
+          uses: actions/setup-java@v5
+          with:
+            distribution: 'temurin'
+            java-version: '21'
+            cache: 'maven'
+        - name: package code
+          run: mvn package
+            
 
