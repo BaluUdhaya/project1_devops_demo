@@ -42,8 +42,7 @@ jobs:
               script: |
                  cd /var/lib/jenkins/workspace/project1/target/
                  ls -l
-                 chmod 777 /var/libs
-                 cd /var/libs && mkdir webapps && chmod 777 /var/libs/webapps
+                 sudo su -
                  scp /var/lib/jenkins/workspace/project1/target/*.war /var/lib/tomcat9/webapps
                  systemctl restart tomcat9
 
