@@ -25,12 +25,11 @@ jobs:
             echo "code tested"
             mvn test
         - name: integrate with jenkins
-          uses: cross-the-world/ssh-scp-ssh-pipelines@latest
+          uses: appleboy/ssh-action@v1
           with:
               host: 13.204.154.55
-              user: 'labuser'
-              pass: 'Nuvelabs123$'
+              username: 'labuser'
+              password: 'Nuvelabs123$'
               port: 22
-              connect_timeout: 10s
             
 
